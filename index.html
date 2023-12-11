@@ -31,20 +31,25 @@
     <link type="text/css" rel="stylesheet" href="form.css" />
     <script src="form.js"></script>
     <script type="text/javascript">
-      //always subscribe to ready event and implement widget related code
-      //inside callback function , it is the best practice while developing widgets
+      // Always subscribe to ready event and implement widget related code inside the callback function.
       JFCustomWidget.subscribe("ready", function(){
           var label = JFCustomWidget.getWidgetSetting('QuestionLabel');
           document.getElementById('labelText').innerHTML = label;
-          //subscribe to form submit event
+          // Subscribe to form submit event
           JFCustomWidget.subscribe("submit", function(){
+              var address = {
+                  addressLine1: document.getElementById('location-input').value,
+                  city: document.getElementById('locality-input').value,
+                  state: document.getElementById('administrative_area_level_1-input').value,
+                  postalCode: document.getElementById('postal_code-input').value,
+                  country: document.getElementById('country-input').value
+              };
+
               var msg = {
-                  //you should valid attribute to data for JotForm
-                  //to be able to use youw widget as required
                   valid: true,
-                  value: document.getElementById('userInput').value
-              }
-              // send value to JotForm
+                  value: address
+              };
+
               JFCustomWidget.sendSubmit(msg);
           });
       });
