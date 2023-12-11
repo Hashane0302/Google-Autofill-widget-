@@ -1,0 +1,103 @@
+<div class="card-container">
+    <div class="panel">
+      <div>
+        <span class="sb-title">Please Enter your Address</span>
+      </div>
+      <input type="text" placeholder="Address" id="location-input" />
+      <input type="text" placeholder="Apt, Suite, etc (optional)" />
+      <input type="text" placeholder="City" id="locality-input" />
+      <div class="half-input-container">
+        <input
+          type="text"
+          class="half-input"
+          placeholder="State/Province"
+          id="administrative_area_level_1-input"
+        />
+        <input
+          type="text"
+          class="half-input"
+          placeholder="Zip/Postal code"
+          id="postal_code-input"
+        />
+      </div>
+      <input type="text" placeholder="Country" id="country-input" />
+      <button class="button-cta">Checkout</button>
+    </div>
+    <div class="map" id="gmp-map"></div>
+  </div>
+
+
+
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="//js.jotform.com/JotFormCustomWidget.min.js"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Google+Sans+Text:500&amp;lang=en"
+    />
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAibYGrpQNEAgHN6fLC2v-iLJoaNuQxDSM&region=AU&libraries=places,marker&callback=initMap&solution_channel=GMP_QB_addressselection_v2_cABC"
+      async
+      defer
+    ></script>
+
+    <title>Hello, world!</title>
+    <link type="text/css" rel="stylesheet" href="form.css" />
+    <script src="form.js"></script>
+
+  </head>
+  <body>
+    <form action="https://submit.jotform.com/submit/233432553696058" method="post">
+   <label for="name">Name:</label>
+   <input type="text" id="name" name="name" required />
+   <br />
+
+   <label for="email">Email:</label>
+   <input type="email" id="email" name="email" required />
+   <br />
+
+   <label for="address">Address:</label>
+   <input type="text" id="address" name="address" required />
+   <br />
+
+   <label for="apt">Apt, Suite, etc (optional):</label>
+   <input type="text" id="apt" name="apt" />
+   <br />
+
+   <label for="city">City:</label>
+   <input type="text" id="city" name="city" required />
+   <br />
+
+   <label for="state">State:</label>
+   <input type="text" id="state" name="state" required />
+   <br />
+
+   <label for="zip">Zip Code:</label>
+   <input type="text" id="zip" name="zip" required />
+   <br />
+
+   <label for="country">Country:</label>
+   <input type="text" id="country" name="country" required />
+   <br />
+
+   <button type="submit" class="button-cta">Checkout</button>
+</form>
+  </body>
+</html>
+
