@@ -1,179 +1,124 @@
-<script src="https://cdn03.jotfor.ms/static/prototype.forms.js?3.3.48852" type="text/javascript"></script>
-<script src="https://cdn01.jotfor.ms/static/jotform.forms.js?3.3.48852" type="text/javascript"></script>
-<script src="https://cdn02.jotfor.ms/js/payments/validategateways.js?v=3.3.48852" type="text/javascript"></script>
-<script src="https://cdn01.jotfor.ms/s/umd/b342d3c5d69/for-form-branding-footer.js?v=3.3.48852" type="text/javascript"
-  defer></script>
-<script type="text/javascript">	JotForm.newDefaultTheme = true;
-  JotForm.extendsNewTheme = false;
-  JotForm.singleProduct = false;
-  JotForm.newPaymentUIForNewCreatedForms = true;
-  JotForm.texts = { "confirmEmail": "E-mail does not match", "pleaseWait": "Please wait...", "validateEmail": "You need to validate this e-mail", "confirmClearForm": "Are you sure you want to clear the form", "lessThan": "Your score should be less than or equal to", "incompleteFields": "There are incomplete required fields. Please complete them.", "required": "This field is required.", "requireOne": "At least one field required.", "requireEveryRow": "Every row is required.", "requireEveryCell": "Every cell is required.", "email": "Enter a valid e-mail address", "alphabetic": "This field can only contain letters", "numeric": "This field can only contain numeric values", "alphanumeric": "This field can only contain letters and numbers.", "cyrillic": "This field can only contain cyrillic characters", "url": "This field can only contain a valid URL", "currency": "This field can only contain currency values.", "fillMask": "Field value must fill mask.", "uploadExtensions": "You can only upload following files:", "noUploadExtensions": "File has no extension file type (e.g. .txt, .png, .jpeg)", "uploadFilesize": "File size cannot be bigger than:", "uploadFilesizemin": "File size cannot be smaller than:", "gradingScoreError": "Score total should only be less than or equal to", "inputCarretErrorA": "Input should not be less than the minimum value:", "inputCarretErrorB": "Input should not be greater than the maximum value:", "maxDigitsError": "The maximum digits allowed is", "minCharactersError": "The number of characters should not be less than the minimum value:", "maxCharactersError": "The number of characters should not be more than the maximum value:", "freeEmailError": "Free email accounts are not allowed", "minSelectionsError": "The minimum required number of selections is ", "maxSelectionsError": "The maximum number of selections allowed is ", "pastDatesDisallowed": "Date must not be in the past.", "dateLimited": "This date is unavailable.", "dateInvalid": "This date is not valid. The date format is {format}", "dateInvalidSeparate": "This date is not valid. Enter a valid {element}.", "ageVerificationError": "You must be older than {minAge} years old to submit this form.", "multipleFileUploads_typeError": "{file} has invalid extension. Only {extensions} are allowed.", "multipleFileUploads_sizeError": "{file} is too large, maximum file size is {sizeLimit}.", "multipleFileUploads_minSizeError": "{file} is too small, minimum file size is {minSizeLimit}.", "multipleFileUploads_emptyError": "{file} is empty, please select files again without it.", "multipleFileUploads_uploadFailed": "File upload failed, please remove it and upload the file again.", "multipleFileUploads_onLeave": "The files are being uploaded, if you leave now the upload will be cancelled.", "multipleFileUploads_fileLimitError": "Only {fileLimit} file uploads allowed.", "dragAndDropFilesHere_infoMessage": "Drag and drop files here", "chooseAFile_infoMessage": "Choose a file", "maxFileSize_infoMessage": "Max. file size", "generalError": "There are errors on the form. Please fix them before continuing.", "generalPageError": "There are errors on this page. Please fix them before continuing.", "wordLimitError": "Too many words. The limit is", "wordMinLimitError": "Too few words.  The minimum is", "characterLimitError": "Too many Characters.  The limit is", "characterMinLimitError": "Too few characters. The minimum is", "ccInvalidNumber": "Credit Card Number is invalid.", "ccInvalidCVC": "CVC number is invalid.", "ccInvalidExpireDate": "Expire date is invalid.", "ccInvalidExpireMonth": "Expiration month is invalid.", "ccInvalidExpireYear": "Expiration year is invalid.", "ccMissingDetails": "Please fill up the credit card details.", "ccMissingProduct": "Please select at least one product.", "ccMissingDonation": "Please enter numeric values for donation amount.", "disallowDecimals": "Please enter a whole number.", "restrictedDomain": "This domain is not allowed", "ccDonationMinLimitError": "Minimum amount is {minAmount} {currency}", "requiredLegend": "All fields marked with * are required and must be filled.", "geoPermissionTitle": "Permission Denied", "geoPermissionDesc": "Check your browser's privacy settings.", "geoNotAvailableTitle": "Position Unavailable", "geoNotAvailableDesc": "Location provider not available. Please enter the address manually.", "geoTimeoutTitle": "Timeout", "geoTimeoutDesc": "Please check your internet connection and try again.", "selectedTime": "Selected Time", "formerSelectedTime": "Former Time", "cancelAppointment": "Cancel Appointment", "cancelSelection": "Cancel Selection", "noSlotsAvailable": "No slots available", "slotUnavailable": "{time} on {date} has been selected is unavailable. Please select another slot.", "multipleError": "There are {count} errors on this page. Please correct them before moving on.", "oneError": "There is {count} error on this page. Please correct it before moving on.", "doneMessage": "Well done! All errors are fixed.", "doneButton": "Done", "reviewSubmitText": "Review and Submit", "nextButtonText": "Next", "prevButtonText": "Previous", "seeErrorsButton": "See Errors", "notEnoughStock": "Not enough stock for the current selection", "notEnoughStock_remainedItems": "Not enough stock for the current selection ({count} items left)", "soldOut": "Sold Out", "justSoldOut": "Just Sold Out", "selectionSoldOut": "Selection Sold Out", "subProductItemsLeft": "({count} items left)", "startButtonText": "START", "submitButtonText": "Submit", "submissionLimit": "Sorry! Only one entry is allowed. Multiple submissions are disabled for this form.", "reviewBackText": "Back to Form", "seeAllText": "See All", "progressMiddleText": "of", "fieldError": "field has an error.", "error": "Error" };
-  JotForm.newPaymentUI = true;
-  JotForm.replaceTagTest = true;
-  JotForm.clearFieldOnHide = "disable";
-  JotForm.submitError = "jumpToFirstError";
-  window.addEventListener('DOMContentLoaded', function () { window.brandingFooter.init({ "formID": 233434018322042, "campaign": "powered_by_jotform_le", "isCardForm": false, "isLegacyForm": true }) }); JotForm.isFullSource = true;
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="//js.jotform.com/JotFormCustomWidget.min.js"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-  JotForm.init(function () {
-    /*INIT-START*/
-    JotForm.alterTexts(undefined);
-    /*INIT-END*/
-  });
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Google+Sans+Text:500&amp;lang=en"
+    />
 
-  setTimeout(function () {
-    JotForm.paymentExtrasOnTheFly([null, { "name": "heading", "qid": "1", "text": "Form", "type": "control_head" }, { "name": "submit2", "qid": "2", "text": "Submit", "type": "control_button" }, null, null, null, null, null, null, null, null, null, null, null, null, null, { "description": "", "name": "address", "qid": "16", "text": "Address", "type": "control_address" }]);
-  }, 20); 
-</script>
-<link
-rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-crossorigin="anonymous"
-/>
-<link
-rel="stylesheet"
-href="https://fonts.googleapis.com/css?family=Google+Sans+Text:500&amp;lang=en"
-/>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAibYGrpQNEAgHN6fLC2v-iLJoaNuQxDSM&region=AU&libraries=places,marker&callback=initMap&solution_channel=GMP_QB_addressselection_v2_cABC"
+      async
+      defer
+    ></script>
 
-<script
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAibYGrpQNEAgHN6fLC2v-iLJoaNuQxDSM&region=AU&libraries=places,marker&callback=initMap&solution_channel=GMP_QB_addressselection_v2_cABC"
-async
-defer
-></script>
-<link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/themes/CSS/form-common.css?v=f746d50
-" />
-
-<link type="text/css" rel="stylesheet" href="form.css" />
+    <title>Hello, world!</title>
+    <link type="text/css" rel="stylesheet" href="form.css" />
     <script src="form.js"></script>
-<style type="text/css">
-  @media print {
-    * {
-      -webkit-print-color-adjust: exact !important;
-      color-adjust: exact !important;
-    }
+    <script type="text/javascript">
+      // Always subscribe to ready event and implement widget related code inside the callback function.
+      JFCustomWidget.subscribe("ready", function(){
+          var label = JFCustomWidget.getWidgetSetting('QuestionLabel');
+          document.getElementById('labelText').innerHTML = label;
+          // Subscribe to form submit event
+          JFCustomWidget.subscribe("submit", function(){
+              var address = {
+                  addressLine1: document.getElementById('location-input').value,
+                  city: document.getElementById('locality-input').value,
+                  state: document.getElementById('administrative_area_level_1-input').value,
+                  postalCode: document.getElementById('postal_code-input').value,
+                  country: document.getElementById('country-input').value
+              };
 
-    .form-section {
-      display: inline !important
-    }
+              var msg = {
+                  valid: true,
+                  value: address
+              };
 
-    .form-pagebreak {
-      display: none !important
-    }
-
-    .form-section-closed {
-      height: auto !important
-    }
-
-    .page-section {
-      position: initial !important
-    }
-  }
-</style>
-<link type="text/css" rel="stylesheet"
-  href="https://cdn02.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?v=3.3.48852" />
-<link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/css/styles/payment/payment_styles.css?3.3.48852" />
-<link type="text/css" rel="stylesheet"
-  href="https://cdn01.jotfor.ms/css/styles/payment/payment_feature.css?3.3.48852" />
-<link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/stylebuilder/donationBox.css?v=3.3.48852">
-<form class="jotform-form" onsubmit="return typeof testSubmitFunction !== 'undefined' && testSubmitFunction();"
-  action="https://submit.jotform.com/submit/233434018322042" method="post" name="form_233434018322042"
-  id="233434018322042" accept-charset="utf-8" autocomplete="on"><input type="hidden" name="formID"
-    value="233434018322042" /><input type="hidden" id="JWTContainer" value="" /><input type="hidden"
-    id="cardinalOrderNumber" value="" /><input type="hidden" id="jsExecutionTracker" name="jsExecutionTracker"
-    value="build-date-1702272450295" /><input type="hidden" id="submitSource" name="submitSource"
-    value="unknown" /><input type="hidden" id="buildDate" name="buildDate" value="1702272450295" />
-      <li class="form-line" data-type="control_address" id="id_16" data-compound-hint=",,,,,,,"><label
-          class="form-label form-label-top form-label-auto" id="label_16" for="input_16_addr_line1" aria-hidden="false">
-          Address </label>
-        <div id="cid_16" class="form-input-wide" data-layout="full">
-          <div summary="" class="form-address-table jsTest-addressField">
-            <div class="card-container">
-              <div class="panel">
-                <div>
-                  <span class="sb-title">Please Enter your Address</span>
-                </div>
-                <input
-                  type="text"
-                  placeholder="Address"
-                  id="location-input"
-                  name="q16_address[addr_line1]"
-                  data-defaultvalue=""
-                  data-component="address_line_1"
-                  aria-labelledby="label_9 sublabel_9_addr_line1"
-                  required=""
-                  value=""
-                />
-                <input
-                  type="text"
-                  placeholder="City"
-                  id="locality-input"
-                  name="q16_address[addr_line2]"
-                  data-defaultvalue=""
-                  data-component="address_line_2"
-                  aria-labelledby="label_9 sublabel_9_addr_line2"
-                  value=""
-                />
-                <input
-                  type="text"
-                  class="half-input"
-                  placeholder="State/Province"
-                  id="administrative_area_level_1-input"
-                  name="q16_address[city]"
-                  data-component="state"
-                  aria-labelledby="label_9 sublabel_9_state"
-                  required=""
-                  value=""
-                />
-                <input
-                  type="text"
-                  class="half-input"
-                  placeholder="Zip/Postal code"
-                  id="postal_code-input"
-                  name="q16_address[state]"
-                />
-                <input
-                  type="text"
-                  placeholder="Country"
-                  id="country-input"
-                  name="q16_address[postal]"
-                  data-component="country"
-                  required=""
-                  aria-labelledby="label_9 sublabel_9_country"
-                  value=""
-                />
-      
-                
-              </div>
-              <div class="map" id="gmp-map"></div>
-              <li class="form-line" data-type="control_button" id="id_2">
-                <div id="cid_2" class="form-input-wide" data-layout="full">
-                  <div data-align="auto"><button
-                      id="input_2" type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField"
-                      data-component="button" data-content="">Submit</button></div>
-                </div>
-              </li>
-            </div>
+              JFCustomWidget.sendSubmit(msg);
+          });
+      });
+  </script>
+  </head>
+  <body>
+    <form
+      action="https://submit.jotform.com/submit/233438653502455"
+      method="post"
+    >
+      <div class="card-container">
+        <div class="panel">
+          <div>
+            <span class="sb-title">Please Enter your Address</span>
           </div>
+          <input
+            type="text"
+            placeholder="Address"
+            id="location-input"
+            name="q15_typeA15[addr_line1]"
+            data-defaultvalue=""
+            data-component="address_line_1"
+            aria-labelledby="label_9 sublabel_9_addr_line1"
+            required=""
+            value=""
+          />
+          <input
+            type="text"
+            placeholder="City"
+            id="locality-input"
+            name="q15_typeA15[addr_line2]"
+            data-defaultvalue=""
+            data-component="address_line_2"
+            aria-labelledby="label_9 sublabel_9_addr_line2"
+            value=""
+          />
+          <input
+            type="text"
+            class="half-input"
+            placeholder="State/Province"
+            id="administrative_area_level_1-input"
+            name="q15_typeA15[addr_line3]"
+            data-component="state"
+            aria-labelledby="label_9 sublabel_9_state"
+            required=""
+            value=""
+          />
+          <input
+            type="text"
+            class="half-input"
+            placeholder="Zip/Postal code"
+            id="postal_code-input"
+            name="q15_typeA15[addr_line4]"
+          />
+          <input
+            type="text"
+            placeholder="Country"
+            id="country-input"
+            name="q15_typeA15[addr_line5]"
+            data-component="country"
+            required=""
+            aria-labelledby="label_9 sublabel_9_country"
+            value=""
+          />
+
+          <button name="submit2" class="button-cta">Checkout</button>
         </div>
-      </li>
-   
-      <li style="display:none">Should be Empty: <input type="text" name="website" value="" type="hidden" /></li>
-    </ul>
-  </div>
-  <script>
-    JotForm.showJotFormPowered = "new_footer";
-  </script>
-  <script>
-    JotForm.poweredByText = "Powered by Jotform";
-  </script><input type="hidden" class="simple_spc" id="simple_spc" name="simple_spc" value="233434018322042" />
-  <script type="text/javascript">
-    var all_spc = document.querySelectorAll("form[id='233434018322042'] .si" + "mple" + "_spc");
-    for (var i = 0; i < all_spc.length; i++) {
-      all_spc[i].value = "233434018322042-233434018322042";
-    }
-  </script>
-</form>
-<script type="text/javascript">JotForm.ownerView = true;</script>
-<script src="https://cdn.jotfor.ms//js/vendor/smoothscroll.min.js?v=3.3.48852"></script>
-<script src="https://cdn.jotfor.ms//js/errorNavigation.js?v=3.3.48852"></script>
-<script type="text/javascript">JotForm.isNewSACL = true;</script>
+        <div class="map" id="gmp-map"></div>
+      </div>
+    </form>
+  </body>
+</html>
