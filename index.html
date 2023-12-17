@@ -1,124 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <script src="//js.jotform.com/JotFormCustomWidget.min.js"></script>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
 
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Google+Sans+Text:500&amp;lang=en"
-    />
+<head>
+  <script src="//js.jotform.com/JotFormCustomWidget.min.js"></script>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAibYGrpQNEAgHN6fLC2v-iLJoaNuQxDSM&region=AU&libraries=places,marker&callback=initMap&solution_channel=GMP_QB_addressselection_v2_cABC"
-      async
-      defer
-    ></script>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans+Text:500&amp;lang=en" />
 
-    <title>Hello, world!</title>
-    <link type="text/css" rel="stylesheet" href="form.css" />
-    <script src="form.js"></script>
-    <script type="text/javascript">
-      // Always subscribe to ready event and implement widget related code inside the callback function.
-      JFCustomWidget.subscribe("ready", function(){
-          var label = JFCustomWidget.getWidgetSetting('QuestionLabel');
-          document.getElementById('labelText').innerHTML = label;
-          // Subscribe to form submit event
-          JFCustomWidget.subscribe("submit", function(){
-              var address = {
-                  addressLine1: document.getElementById('location-input').value,
-                  city: document.getElementById('locality-input').value,
-                  state: document.getElementById('administrative_area_level_1-input').value,
-                  postalCode: document.getElementById('postal_code-input').value,
-                  country: document.getElementById('country-input').value
-              };
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAibYGrpQNEAgHN6fLC2v-iLJoaNuQxDSM&region=AU&libraries=places,marker&callback=initMap&solution_channel=GMP_QB_addressselection_v2_cABC"
+    async defer></script>
+    
 
-              var msg = {
-                  valid: true,
-                  value: address
-              };
+  <title>Hello, world!</title>
+  <link type="text/css" rel="stylesheet" href="form.css" />
+  <script src="form.js"></script>
+  <script type="text/javascript">
+    // Always subscribe to ready event and implement widget related code inside the callback function.
+    JFCustomWidget.subscribe("ready", function () {
+      var label = JFCustomWidget.getWidgetSetting("QuestionLabel");
+      document.getElementById("labelText").innerHTML = label;
+      // Subscribe to form submit event
+      JFCustomWidget.subscribe("submit", function () {
+        var address = {
+          addressLine1: document.getElementById("location-input").value,
+          city: document.getElementById("locality-input").value,
+          state: document.getElementById("administrative_area_level_1-input")
+            .value,
+          postalCode: document.getElementById("postal_code-input").value,
+          country: document.getElementById("country-input").value,
+        };
 
-              JFCustomWidget.sendSubmit(msg);
-          });
+        var msg = {
+          valid: true,
+          value: address,
+        };
+
+        JFCustomWidget.sendSubmit(msg);
       });
+    });
   </script>
-  </head>
-  <body>
-    <form
-      action="https://submit.jotform.com/submit/233442579950060"
-      method="post"
-    >
-      <div class="card-container">
-        <div class="panel">
-          <div>
-            <span class="sb-title">Please Enter your Address</span>
-          </div>
-          <input
-            type="text"
-            placeholder="Address"
-            id="location-input"
-            name="q3_typeA[addr_line1]"
-            data-defaultvalue=""
-            data-component="address_line_1"
-            aria-labelledby="label_9 sublabel_9_addr_line1"
-            required=""
-            value=""
-          />
-          <input
-            type="text"
-            placeholder="City"
-            id="locality-input"
-            name="q3_typeA[addr_line2]"
-            data-defaultvalue=""
-            data-component="address_line_2"
-            aria-labelledby="label_9 sublabel_9_addr_line2"
-            value=""
-          />
-          <input
-            type="text"
-            class="half-input"
-            placeholder="State/Province"
-            id="administrative_area_level_1-input"
-            name="q3_typeA[addr_line3]"
-            data-component="state"
-            aria-labelledby="label_9 sublabel_9_state"
-            required=""
-            value=""
-          />
-          <input
-            type="text"
-            class="half-input"
-            placeholder="Zip/Postal code"
-            id="postal_code-input"
-            name="q3_typeA[addr_line4]"
-          />
-          <input
-            type="text"
-            placeholder="Country"
-            id="country-input"
-            name="q3_typeA[addr_line5]"
-            data-component="country"
-            required=""
-            aria-labelledby="label_9 sublabel_9_country"
-            value=""
-          />
+</head>
 
-          <button name="submit2" class="button-cta">Submit</button>
+<body>
+  <form action="https://submit.jotform.com/submit/233442579950060" method="post" class="livingAddress">
+    <div class="card-container">
+      <div class="panel">
+        <div>
+          <span class="sb-title">Shipping Address</span>
         </div>
-        <div class="map" id="gmp-map"></div>
+        <input class="textBox" type="text" id="location-input" name="q3_typeA[addr_line1]" data-defaultvalue=""
+          data-component="address_line_1" aria-labelledby="label_9 sublabel_9_addr_line1" required="" value="" />
+        <p>Street Address</p>
+
+        <div class="subContainter">
+          <div class="city">
+            <input class="textBoxsub" type="text" id="locality-input" name="q3_typeA[addr_line2]" data-defaultvalue=""
+              data-component="address_line_2" aria-labelledby="label_9 sublabel_9_addr_line2" value="" />
+            <p>City</p>
+          </div>
+          <div>
+            <input class="textBoxsub" type="text" class="half-input" id="administrative_area_level_1-input"
+              name="q3_typeA[addr_line3]" data-component="state" aria-labelledby="label_9 sublabel_9_state" required=""
+              value="" />
+            <p>State/Province</p>
+          </div>
+        </div>
+        <div class="subContainter">
+          <div class="postalCode">
+            <input class="textBoxsub" type="text" class="half-input" id="postal_code-input"
+              name="q3_typeA[addr_line4]" />
+            <p>Zip/Postal Code</p>
+          </div>
+          <div>
+            <input class="textBox" type="text" id="country-input" name="q3_typeA[addr_line5]" data-component="country"
+              required="" aria-labelledby="label_9 sublabel_9_country" value="" />
+            <p>Country</p>
+          </div>
+        </div>
+        <label for="myCheckbox" class="checkboxLabel"><input type="checkbox" id="myCheckbox"
+            onchange="copyShippingAddress()" />&nbsp Shipping address same as billing address </label>
+
+
+          <div action="https://submit.jotform.com/submit/233442579950060" method="post" class="billingAddress">
+        <div>
+          <span class="sb-title">Billing Address</span>
+        </div>
+        <input style="width:410px" class="textBox" type="text" id="location-input" name="q3_typeA[addr_line1]" data-defaultvalue=""
+          data-component="address_line_1" aria-labelledby="label_9 sublabel_9_addr_line1" required="" value="" />
+        <p>Street Address</p>
+
+        <div class="subContainter">
+          <div class="city">
+            <input class="textBoxsub" type="text" id="locality-input" name="q3_typeA[addr_line2]" data-defaultvalue=""
+              data-component="address_line_2" aria-labelledby="label_9 sublabel_9_addr_line2" value="" />
+            <p>City</p>
+          </div>
+          <div>
+            <input class="textBoxsub" type="text" class="half-input" id="administrative_area_level_1-input"
+              name="q3_typeA[addr_line3]" data-component="state" aria-labelledby="label_9 sublabel_9_state" required=""
+              value="" />
+            <p>State/Province</p>
+          </div>
+        </div>
+        <div class="subContainter">
+          <div class="postalCode">
+            <input class="textBoxsub" type="text" class="half-input" id="postal_code-input"
+              name="q3_typeA[addr_line4]" />
+            <p>Zip/Postal Code</p>
+          </div>
+          <div>
+            <input class="textBox" type="text" id="country-input" name="q3_typeA[addr_line5]" data-component="country"
+              required="" aria-labelledby="label_9 sublabel_9_country" value="" />
+            <p>Country</p>
+          </div>
+        </div>
       </div>
-    </form>
-  </body>
+
+        <button name="submit2" class="button-cta">Submit</button>
+
+        <div class="map" id="gmp-map"></div>
+
+
+        <!-- The Second Form Start -->
+        <form action="https://submit.jotform.com/submit/233442579950060" method="post" class="billingAddress">
+
+        </form>
+</body>
+
 </html>

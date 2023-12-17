@@ -13,7 +13,6 @@ const CONFIGURATION = {
     mapId: "",
   },
   mapsApiKey: "AIzaSyAibYGrpQNEAgHN6fLC2v-iLJoaNuQxDSM",
- 
 };
 
 const SHORT_NAME_ADDRESS_COMPONENT_TYPES = new Set([
@@ -93,4 +92,30 @@ async function initMap() {
     renderAddress(place, map, marker);
     fillInAddress(place);
   });
+}
+
+function copyShippingAddress() {
+  if (document.getElementById("myCheckbox").checked) {
+    document.querySelector(".billingAddress #location-input").value =
+      document.querySelector(".livingAddress #location-input").value;
+    document.querySelector(".billingAddress #locality-input").value =
+      document.querySelector(".livingAddress #locality-input").value;
+    document.querySelector(
+      ".billingAddress #administrative_area_level_1-input"
+    ).value = document.querySelector(
+      ".livingAddress #administrative_area_level_1-input"
+    ).value;
+    document.querySelector(".billingAddress #postal_code-input").value =
+      document.querySelector(".livingAddress #postal_code-input").value;
+    document.querySelector(".billingAddress #country-input").value =
+      document.querySelector(".livingAddress #country-input").value;
+  } else {
+    document.querySelector(".billingAddress #location-input").value = "";
+    document.querySelector(".billingAddress #locality-input").value = "";
+    document.querySelector(
+      ".billingAddress #administrative_area_level_1-input"
+    ).value = "";
+    document.querySelector(".billingAddress #postal_code-input").value = "";
+    document.querySelector(".billingAddress #country-input").value = "";
+  }
 }

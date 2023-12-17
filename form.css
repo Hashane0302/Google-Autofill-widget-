@@ -6,7 +6,7 @@ body {
     position: relative;
     top: -12px;
     font-family: Roboto, sans-serif;
-    font-weight: 500;
+    font-weight: 600;
   }
   
   .sb-title-icon {
@@ -16,17 +16,17 @@ body {
   
   .card-container {
     display: flex;
-    height: 500px;
+    height: 700px;
     width: auto;
   }
   
   .panel {
     background: white;
-    width: 300px;
+    width: 450px;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    
   }
   
   .half-input-container {
@@ -68,7 +68,7 @@ body {
     align-self: start;
     background-color: #1976d2;
     border: 0;
-    border-radius: 21px;
+    border-radius: 3px;
     color: white;
     cursor: pointer;
     font-family: "Google Sans Text", sans-serif;
@@ -80,4 +80,48 @@ body {
 
   #gmp-map {
     display:none;
+  }
+
+  .textBox {
+    border: 1px solid black;
+    border-radius: 4px;
+    height:35px;
+
+  }
+
+  .textBoxsub{
+
+    border: 1px solid black;
+    border-radius: 4px;
+    height:35px;
+
+  }
+
+  .subContainter {
+
+    display : flex;
+    position: space-inbetwen;
+  }
+
+  .city {
+    padding-right:48px;
+  }
+
+  .postalCode {
+    padding-right:48px;
+  }
+
+  p {
+    font-size:14px;
+    padding:5px 0px 5px 0px
+  }
+
+  .checkboxLabel {
+    display: flex;
+    align-items: center;
+  
+  }
+
+  .billingAddress {
+    margin-top :20px;
   }
