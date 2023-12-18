@@ -54,18 +54,18 @@
         <div>
           <span class="sb-title">Shipping Address</span>
         </div>
-        <input class="textBox" type="text" id="location-input" name="q3_typeA[addr_line1]" data-defaultvalue=""
+        <input class="textBox" type="text" id="billing-street" name="q3_typeA[addr_line1]" data-defaultvalue=""
           data-component="address_line_1" aria-labelledby="label_9 sublabel_9_addr_line1" required="" value="" />
         <p>Street Address</p>
 
         <div class="subContainter">
           <div class="city">
-            <input class="textBoxsub" type="text" id="locality-input" name="q3_typeA[addr_line2]" data-defaultvalue=""
+            <input class="textBoxsub" type="text" id="billing-city" name="q3_typeA[addr_line2]" data-defaultvalue=""
               data-component="address_line_2" aria-labelledby="label_9 sublabel_9_addr_line2" value="" />
             <p>City</p>
           </div>
           <div>
-            <input class="textBoxsub" type="text" class="half-input" id="administrative_area_level_1-input"
+            <input class="textBoxsub" type="text" class="half-input"id="billing-state"
               name="q3_typeA[addr_line3]" data-component="state" aria-labelledby="label_9 sublabel_9_state" required=""
               value="" />
             <p>State/Province</p>
@@ -73,12 +73,12 @@
         </div>
         <div class="subContainter">
           <div class="postalCode">
-            <input class="textBoxsub" type="text" class="half-input" id="postal_code-input"
+            <input class="textBoxsub" type="text" class="half-input" id="billing-zip"
               name="q3_typeA[addr_line4]" />
             <p>Zip/Postal Code</p>
           </div>
           <div>
-            <input class="textBox" type="text" id="country-input" name="q3_typeA[addr_line5]" data-component="country"
+            <input class="textBox" type="text" id="billing-country" name="q3_typeA[addr_line5]" data-component="country"
               required="" aria-labelledby="label_9 sublabel_9_country" value="" />
             <p>Country</p>
           </div>
@@ -91,18 +91,18 @@
         <div>
           <span class="sb-title">Billing Address</span>
         </div>
-        <input style="width:410px" class="textBox" type="text" id="location-input" name="q3_typeA[addr_line1]" data-defaultvalue=""
+        <input style="width:410px" class="textBox" type="text" id="shipping-street" name="q3_typeA[addr_line1]" data-defaultvalue=""
           data-component="address_line_1" aria-labelledby="label_9 sublabel_9_addr_line1" required="" value="" />
         <p>Street Address</p>
 
         <div class="subContainter">
           <div class="city">
-            <input class="textBoxsub" type="text" id="locality-input" name="q3_typeA[addr_line2]" data-defaultvalue=""
+            <input class="textBoxsub" type="text" id="shipping-city" name="q3_typeA[addr_line2]" data-defaultvalue=""
               data-component="address_line_2" aria-labelledby="label_9 sublabel_9_addr_line2" value="" />
             <p>City</p>
           </div>
           <div>
-            <input class="textBoxsub" type="text" class="half-input" id="administrative_area_level_1-input"
+            <input class="textBoxsub" type="text" class="half-input" id="shipping-state"
               name="q3_typeA[addr_line3]" data-component="state" aria-labelledby="label_9 sublabel_9_state" required=""
               value="" />
             <p>State/Province</p>
@@ -110,12 +110,12 @@
         </div>
         <div class="subContainter">
           <div class="postalCode">
-            <input class="textBoxsub" type="text" class="half-input" id="postal_code-input"
+            <input class="textBoxsub" type="text" class="half-input" id="shipping-zip"
               name="q3_typeA[addr_line4]" />
             <p>Zip/Postal Code</p>
           </div>
           <div>
-            <input class="textBox" type="text" id="country-input" name="q3_typeA[addr_line5]" data-component="country"
+            <input class="textBox" type="text" id="shipping-country" name="q3_typeA[addr_line5]" data-component="country"
               required="" aria-labelledby="label_9 sublabel_9_country" value="" />
             <p>Country</p>
           </div>
@@ -131,6 +131,55 @@
         <form action="https://submit.jotform.com/submit/233442579950060" method="post" class="billingAddress">
 
         </form>
+        <script>
+          // Function to fill address fields when place changes
+          function fillAddressFields(place, street, city, state, zip, country) {
+              document.getElementById(street).value = '';
+              document.getElementById(city).value = '';
+              document.getElementById(state).value = '';
+              document.getElementById(zip).value = '';
+              document.getElementById(country).value = '';
+  
+              // Check if address components are available
+              if (place.address_components) {
+                  place.address_components.forEach(component => {
+                      if (component.types.includes('route')) {
+                          document.getElementById(street).value = component.long_name;
+                      } else if (component.types.includes('locality')) {
+                          document.getElementById(city).value = component.long_name;
+                      } else if (component.types.includes('administrative_area_level_1')) {
+                          document.getElementById(state).value = component.short_name;
+                      } else if (component.types.includes('postal_code')) {
+                          document.getElementById(zip).value = component.long_name;
+                      } else if (component.types.includes('country')) {
+                          document.getElementById(country).value = component.short_name;
+                      }
+                  });
+              }
+          }
+  
+          // Initialize Place Autocomplete for billing address
+          var billingAutocomplete = new google.maps.places.Autocomplete(
+              document.getElementById('billing-street'),
+              { types: ['geocode'] }
+          );
+  
+          billingAutocomplete.addListener('place_changed', function () {
+              var place = billingAutocomplete.getPlace();
+              fillAddressFields(place, 'billing-street', 'billing-city', 'billing-state', 'billing-zip', 'billing-country');
+          });
+  
+          // Initialize Place Autocomplete for shipping address
+          var shippingAutocomplete = new google.maps.places.Autocomplete(
+              document.getElementById('shipping-street'),
+              { types: ['geocode'] }
+          );
+  
+          shippingAutocomplete.addListener('place_changed', function () {
+              var place = shippingAutocomplete.getPlace();
+              fillAddressFields(place, 'shipping-street', 'shipping-city', 'shipping-state', 'shipping-zip', 'shipping-country');
+          });
+      </script>
 </body>
 
 </html>
